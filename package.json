@@ -1,5 +1,6 @@
 {
 	"name": "tessie-electron",
+
 	"version": "1.0.0",
 	"description": "A simple electron-based desktop app for Tessie.",
 	"main": "./out/main/index.js",
@@ -23,6 +24,8 @@
 	"devDependencies": {
 		"@electron-toolkit/eslint-config": "^1.0.2",
 		"@electron-toolkit/eslint-config-prettier": "^2.0.0",
+		"@electron/notarize": "^2.5.0",
+		"dotenv": "^16.4.5",
 		"electron": "^31.0.2",
 		"electron-builder": "^24.13.3",
 		"electron-vite": "^2.3.0",
