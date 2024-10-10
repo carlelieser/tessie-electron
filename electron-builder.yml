@@ -1,5 +1,7 @@
 appId: com.tessie.app
-productName: tessie-electron
+productName: Tessie
+artifactName: ${productName}.${ext}
+afterSign: scripts/notarize.js
 directories:
   buildResources: build
 files:
@@ -10,14 +12,15 @@ files:
   - '!{.env,.env.*,.npmrc,pnpm-lock.yaml}'
 asarUnpack:
   - resources/**
-win:
-  executableName: tessie-electron
 nsis:
-  artifactName: ${name}-${version}-setup.${ext}
+  artifactName: ${productName} Setup.${ext}
   shortcutName: ${productName}
   uninstallDisplayName: ${productName}
   createDesktopShortcut: always
 mac:
+  hardenedRuntime: true
+  darkModeSupport: true
+  artifactName: ${productName}.${ext}
   entitlementsInherit: build/entitlements.mac.plist
   extendInfo:
     - NSCameraUsageDescription: Application requests access to the device's camera.
@@ -26,7 +29,7 @@ mac:
     - NSDownloadsFolderUsageDescription: Application requests access to the user's Downloads folder.
   notarize: true
 dmg:
-  artifactName: ${name}-${version}.${ext}
+    artifactName: ${productName} Setup.${ext}
 linux:
   target:
     - AppImage
@@ -34,8 +37,7 @@ linux:
     - deb
   maintainer: electronjs.org
   category: Utility
-appImage:
-  artifactName: ${name}-${version}.${ext}
+  artifactName: ${productName}.${ext}
 npmRebuild: false
 publish:
   provider: generic
