@@ -1,8 +1,9 @@
 {
 	"name": "tessie-electron",
 	"version": "1.0.0",
-	"description": "A simple electron app that loads Tessie.",
+	"description": "A simple electron-based desktop app for Tessie.",
 	"main": "./out/main/index.js",
+	"author": "Carlos E. Santos",
 	"license": "MIT",
 	"scripts": {
 		"start": "electron-vite preview",
