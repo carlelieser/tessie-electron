@@ -1,4 +1,4 @@
-# Tessie Electron Wrapper
+# Tessie Electron
 
 A simple Electron-based desktop wrapper for [Tessie](https://tessie.com/), the Tesla management platform.
 
